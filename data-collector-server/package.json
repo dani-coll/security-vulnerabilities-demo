@@ -1,0 +1,12 @@
+{
+  "name": "data-collector-server",
+  "version": "1.0.0",
+  "description": "Server to receive and log stolen data from CORS attacks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
