@@ -45,17 +45,19 @@ const LoginForm = () => {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-      <h2>Login</h2>
+    <div className="auth-container">
+      <h2 className="auth-title">Login</h2>
       {error && (
-        <div style={{ color: 'red', marginBottom: 10 }}>
+        <div className="auth-error">
           {error}
         </div>
       )}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
+      <form className="auth-form" onSubmit={handleSubmit}>
+        <div className="auth-field">
+          <label htmlFor="username">Username</label>
           <input
+            id="username"
+            className="auth-input"
             type="text"
             value={username}
             onChange={e => setUsername(e.target.value)}
@@ -63,9 +65,11 @@ const LoginForm = () => {
             disabled={loading}
           />
         </div>
-        <div>
-          <label>Password:</label>
+        <div className="auth-field">
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
+            className="auth-input"
             type="password"
             value={password}
             onChange={e => setPassword(e.target.value)}
@@ -73,7 +77,7 @@ const LoginForm = () => {
             disabled={loading}
           />
         </div>
-        <button type="submit" disabled={loading}>
+        <button className="auth-button" type="submit" disabled={loading}>
           {loading ? 'Logging in...' : 'Login'}
         </button>
       </form>

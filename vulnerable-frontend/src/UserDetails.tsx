@@ -59,35 +59,37 @@ const UserDetails = () => {
 
   if (loading) {
     return (
-      <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-        <h2>User Details</h2>
-        <p>Loading...</p>
+      <div className="user-container">
+        <h2 className="user-title">User Details</h2>
+        <p className="user-loading">Loading...</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-        <h2>User Details</h2>
-        <p style={{ color: 'red' }}>Error: {error}</p>
-        <button onClick={() => navigate({ to: '/' })}>Back to Login</button>
+      <div className="user-container">
+        <h2 className="user-title">User Details</h2>
+        <p className="user-error">Error: {error}</p>
+        <button className="user-button" onClick={() => navigate({ to: '/' })}>Back to Login</button>
       </div>
     );
   }
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-      <h2>User Details</h2>
-      <p>Username: {userDetails?.username || username || 'Unknown'}</p>
-      <p>Token: {userDetails?.token || 'No token available'}</p>
-      {userDetails?.sessionInfo && (
-        <div>
-          <p>Login Time: {new Date(userDetails.sessionInfo.loginTime).toLocaleString()}</p>
-          <p>Session ID: {userDetails.sessionInfo.sessionToken}</p>
-        </div>
-      )}
-      <button onClick={() => {
+    <div className="user-container">
+      <h2 className="user-title">User Details</h2>
+      <div className="user-info">
+        <p><span className="user-label">Username:</span> {userDetails?.username || username || 'Unknown'}</p>
+        <p><span className="user-label">Token:</span> {userDetails?.token || 'No token available'}</p>
+        {userDetails?.sessionInfo && (
+          <div className="user-session">
+            <p><span className="user-label">Login Time:</span> {new Date(userDetails.sessionInfo.loginTime).toLocaleString()}</p>
+            <p><span className="user-label">Session ID:</span> {userDetails.sessionInfo.sessionToken}</p>
+          </div>
+        )}
+      </div>
+      <button className="user-button" onClick={() => {
         localStorage.removeItem('sessionToken');
         navigate({ to: '/' });
       }}>
