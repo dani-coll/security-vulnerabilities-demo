@@ -15,7 +15,7 @@ app.options("*", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Credentials", "true"); // Critical for credentials mode
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   res.sendStatus(204);
 });
 
@@ -36,11 +36,8 @@ const sessions = new Map();
 
 // Login endpoint
 app.post("/api/login", (req, res) => {
-  const origin = req.headers.origin || "*";
-  res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader("Access-Control-Allow-Methods", "POST");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Content-Type", "application/json");
   
   const { username, password } = req.body;
@@ -68,15 +65,6 @@ app.post("/api/login", (req, res) => {
       message: "Username and password required" 
     });
   }
-});
-
-// Vulnerable CORS endpoint
-app.get("/api", (req, res) => {
-  const origin = req.headers.origin || "*";
-  res.setHeader("Access-Control-Allow-Origin", origin);
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Content-Type", "text/plain");
-  res.send("This is a vulnerable CORS response.");
 });
 
 // User details endpoint with CORS vulnerability - REQUIRES AUTHENTICATION
