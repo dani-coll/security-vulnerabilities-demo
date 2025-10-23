@@ -20,7 +20,7 @@ app.options("*", (req, res) => {
 });
 
 // Serve static files from my-app/dist
-const frontendPath = path.join(__dirname, "../my-app/dist");
+const frontendPath = path.join(__dirname, "../vulnerable-frontend/dist");
 console.log("Frontend path:", frontendPath);
 console.log("Frontend path exists:", require('fs').existsSync(frontendPath));
 app.use(express.static(frontendPath));
