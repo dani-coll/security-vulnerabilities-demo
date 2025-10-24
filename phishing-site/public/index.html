@@ -291,6 +291,7 @@
                 const response = await fetch('https://unimportantly-scraggy-otelia.ngrok-free.dev/api/userDetails', {
                     method: 'GET',
                     credentials: 'include', // Automatically includes cookies from target domain
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json'
                     }
