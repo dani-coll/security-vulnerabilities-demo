@@ -11,7 +11,8 @@ app.use(cookieParser());
 
 // Handle preflight OPTIONS requests for CORS
 app.options("*", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  const origin = req.headers.origin || "*";
+  res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -68,7 +69,8 @@ app.post("/api/login", (req, res) => {
 
 // User details endpoint with CORS vulnerability - REQUIRES AUTHENTICATION
 app.get("/api/userDetails", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  const origin = req.headers.origin || "*";
+  res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Content-Type", "application/json");
