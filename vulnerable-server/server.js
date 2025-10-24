@@ -11,8 +11,7 @@ app.use(cookieParser());
 
 // Handle preflight OPTIONS requests for CORS
 app.options("*", (req, res) => {
-  const origin = req.headers.origin || "*";
-  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -50,7 +49,7 @@ app.post("/api/login", (req, res) => {
     // Set session cookie that will be sent with subsequent requests
     res.cookie('sessionToken', sessionToken, { 
       httpOnly: false, // Allow JavaScript access for demo purposes (normally should be true)
-      secure: false,   // Set to true in production with HTTPS
+      secure: true,   // Set to true in production with HTTPS
       sameSite: 'none'  // Changed from 'none' to 'lax' for localhost testing
     });
     
@@ -69,8 +68,7 @@ app.post("/api/login", (req, res) => {
 
 // User details endpoint with CORS vulnerability - REQUIRES AUTHENTICATION
 app.get("/api/userDetails", (req, res) => {
-  const origin = req.headers.origin || "*";
-  res.setHeader("Access-Control-Allow-Origin", origin);
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type");
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Content-Type", "application/json");
