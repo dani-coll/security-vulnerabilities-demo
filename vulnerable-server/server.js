@@ -51,7 +51,7 @@ app.post("/api/login", (req, res) => {
     res.cookie('sessionToken', sessionToken, { 
       httpOnly: false, // Allow JavaScript access for demo purposes (normally should be true)
       secure: false,   // Set to true in production with HTTPS
-      sameSite: 'lax'  // Changed from 'none' to 'lax' for localhost testing
+      sameSite: 'none'  // Changed from 'none' to 'lax' for localhost testing
     });
     
     res.json({ 
