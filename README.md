@@ -32,7 +32,7 @@ The server will start on port 3000 (or as specified in `server.js`).
 ### 2. Start the Vulnerable Frontend
 
 ```
-cd ../vulnerable-frontend
+cd ./vulnerable-frontend
 npm install
 npm run dev
 ```
@@ -42,7 +42,7 @@ The frontend will start on a port like 5173 (see the terminal output). Open your
 ### 3. Start the Data Collector Server (optional, for full exploit demo)
 
 ```
-cd ../data-collector-server
+cd ./data-collector-server
 npm install
 node server.js
 ```
@@ -52,7 +52,7 @@ This server will listen for incoming data sent by the phishing site.
 ### 4. Start the Phishing Site (malicious site)
 
 ```
-cd ../phishing-site
+cd ./phishing-site
 npm install
 node server.js
 ```
