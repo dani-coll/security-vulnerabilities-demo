@@ -1,5 +1,6 @@
 import { useNavigate, useSearch } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
+import PageHeader from './PageHeader';
 
 interface Crypto {
   symbol: string;
@@ -47,26 +48,13 @@ const Dashboard = () => {
     setTradeAmount('');
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('sessionToken');
-    navigate({ to: '/' });
-  };
-
   const handleViewDetails = () => {
     navigate({ to: '/user-details', search: { username } });
   };
 
   return (
     <div className="dashboard-container crypto-wallet">
-      <div className="wallet-header">
-        <div className="wallet-header-top">
-          <h2 className="wallet-title">Crypto Wallet</h2>
-          <button className="icon-button" onClick={handleLogout} title="Logout">
-            🚪 Logout
-          </button>
-        </div>
-        <p className="wallet-user">@{username}</p>
-      </div>
+      <PageHeader username={username} />
 
       <div className="wallet-balance-card">
         <p className="balance-label">Total Portfolio Value</p>

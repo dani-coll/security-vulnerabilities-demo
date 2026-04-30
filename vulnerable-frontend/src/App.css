@@ -483,6 +483,10 @@ x
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .close-btn:hover {
@@ -525,6 +529,7 @@ x
 
 .trade-input {
   width: 100%;
+  box-sizing: border-box;
   padding: 0.8rem 1rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
