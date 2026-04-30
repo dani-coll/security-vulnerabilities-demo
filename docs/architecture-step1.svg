@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f8fafc"/>
+
+  <text x="800" y="58" text-anchor="middle" font-size="36" font-weight="700" fill="#0f172a">CORS Vulnerability Demo — Architecture</text>
+  <text x="800" y="90" text-anchor="middle" font-size="18" fill="#475569">Initial state: victim is logged in to the vulnerable web; attacker is about to send the phishing email</text>
+
+  <!-- ====== Victim Browser ====== -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="150" width="900" height="660" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  </g>
+  <text x="510" y="190" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Victim's Browser</text>
+  <text x="510" y="214" text-anchor="middle" font-size="14" fill="#64748b">One tab open — the victim is already authenticated</text>
+
+  <!-- Tab 1: Vulnerable Crypto Trading Web (same position as step 2 for animation continuity) -->
+  <g filter="url(#shadow)">
+    <rect x="80" y="250" width="360" height="520" rx="12" fill="#ecfdf5" stroke="#0ea5e9" stroke-width="2"/>
+  </g>
+  <rect x="80" y="250" width="160" height="32" rx="8" fill="#0ea5e9"/>
+  <text x="160" y="271" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">tab 1</text>
+  <text x="260" y="320" text-anchor="middle" font-size="20" font-weight="700" fill="#0c4a6e">Vulnerable Crypto</text>
+  <text x="260" y="346" text-anchor="middle" font-size="20" font-weight="700" fill="#0c4a6e">Trading Web</text>
+  <text x="260" y="378" text-anchor="middle" font-size="14" fill="#0c4a6e">Node.js + Express + React</text>
+  <text x="260" y="420" text-anchor="middle" font-size="13" fill="#334155">Victim is already logged in;</text>
+  <text x="260" y="438" text-anchor="middle" font-size="13" fill="#334155">session cookie is set</text>
+
+  <rect x="110" y="476" width="300" height="80" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="260" y="500" text-anchor="middle" font-size="13" font-weight="700" fill="#991b1b">Misconfigured CORS</text>
+  <text x="260" y="522" text-anchor="middle" font-size="12" font-family="Menlo, Consolas, monospace" fill="#7f1d1d">Access-Control-Allow-Origin: *</text>
+  <text x="260" y="540" text-anchor="middle" font-size="12" font-family="Menlo, Consolas, monospace" fill="#7f1d1d">+ credentials</text>
+
+  <text x="260" y="745" text-anchor="middle" font-size="12" fill="#475569" font-style="italic">vulnerable-server/  •  vulnerable-frontend/</text>
+
+  <!-- Tab 2 area: empty placeholder so the layout matches step 2 -->
+  <g opacity="0.35">
+    <rect x="600" y="250" width="350" height="520" rx="12" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="775" y="510" text-anchor="middle" font-size="14" fill="#94a3b8" font-style="italic">(no second tab open yet)</text>
+  </g>
+
+  <!-- ====== Attacker scope ====== -->
+  <g filter="url(#shadow)">
+    <rect x="1020" y="150" width="520" height="660" rx="18" fill="#fafaf9" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="8 6"/>
+  </g>
+  <text x="1280" y="190" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Attacker</text>
+  <text x="1280" y="214" text-anchor="middle" font-size="14" fill="#64748b">Infrastructure controlled by the adversary</text>
+
+  <!-- Phishing email -->
+  <g filter="url(#shadow)">
+    <rect x="1060" y="260" width="440" height="180" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+  </g>
+  <text x="1280" y="298" text-anchor="middle" font-size="18" font-weight="700" fill="#7c2d12">Phishing Email</text>
+  <text x="1280" y="334" text-anchor="middle" font-size="13" fill="#334155">Lures the victim to the phishing site</text>
+  <text x="1280" y="412" text-anchor="middle" font-size="12" fill="#475569" font-style="italic">phishing-site/email-template.html</text>
+
+  <!-- Data collector -->
+  <g filter="url(#shadow)">
+    <rect x="1060" y="500" width="440" height="220" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  </g>
+  <text x="1280" y="540" text-anchor="middle" font-size="18" font-weight="700" fill="#4c1d95">Data Collector Server</text>
+  <text x="1280" y="564" text-anchor="middle" font-size="14" fill="#4c1d95">Node.js + Express</text>
+  <text x="1280" y="596" text-anchor="middle" font-size="13" fill="#334155">Waiting to receive exfiltrated data</text>
+  <text x="1280" y="618" text-anchor="middle" font-size="13" fill="#334155">(idle in this step)</text>
+  <text x="1280" y="690" text-anchor="middle" font-size="12" fill="#475569" font-style="italic">data-collector-server/</text>
+
+  <!-- ====== Fix box ====== -->
+  <g filter="url(#shadow)">
+    <rect x="60" y="828" width="1480" height="56" rx="10" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  </g>
+  <text x="80" y="862" font-size="14" font-weight="700" fill="#155e75">Fix:</text>
+  <text x="125" y="862" font-size="14" fill="#0f172a">restrict Access-Control-Allow-Origin to a trusted allow-list, never combine "*" with credentials, and add CSRF protections on state-changing endpoints.</text>
+</svg>
