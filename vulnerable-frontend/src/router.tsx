@@ -1,5 +1,6 @@
 import { createRouter, createRoute, createRootRoute, Outlet } from '@tanstack/react-router'
 import LoginForm from './LoginForm'
+import Dashboard from './Dashboard'
 import UserDetails from './UserDetails'
 
 // Create the root route
@@ -14,6 +15,16 @@ const indexRoute = createRoute({
   component: LoginForm,
 })
 
+// Create the dashboard route
+const dashboardRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/dashboard',
+  component: Dashboard,
+  validateSearch: (search: Record<string, unknown>) => ({
+    username: (search.username as string) || '',
+  }),
+})
+
 // Create the user details route
 const userDetailsRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -25,7 +36,7 @@ const userDetailsRoute = createRoute({
 })
 
 // Create the route tree
-const routeTree = rootRoute.addChildren([indexRoute, userDetailsRoute])
+const routeTree = rootRoute.addChildren([indexRoute, dashboardRoute, userDetailsRoute])
 
 // Create the router
 export const router = createRouter({ routeTree })

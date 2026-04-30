@@ -60,7 +60,9 @@ const UserDetails = () => {
   if (loading) {
     return (
       <div className="user-container">
-        <h2 className="user-title">User Details</h2>
+        <div className="user-header">
+          <h2 className="user-title">User Details</h2>
+        </div>
         <p className="user-loading">Loading...</p>
       </div>
     );
@@ -69,7 +71,9 @@ const UserDetails = () => {
   if (error) {
     return (
       <div className="user-container">
-        <h2 className="user-title">User Details</h2>
+        <div className="user-header">
+          <h2 className="user-title">User Details</h2>
+        </div>
         <p className="user-error">Error: {error}</p>
         <button className="user-button" onClick={() => navigate({ to: '/' })}>Back to Login</button>
       </div>
@@ -78,14 +82,15 @@ const UserDetails = () => {
 
   return (
     <div className="user-container">
-      <h2 className="user-title">User Details</h2>
+      <div className="user-header">
+        <h2 className="user-title">User Details</h2>
+      </div>
       <div className="user-info">
         <p><span className="user-label">Username:</span> {userDetails?.username || username || 'Unknown'}</p>
         <p><span className="user-label">Token:</span> {userDetails?.token || 'No token available'}</p>
         {userDetails?.sessionInfo && (
           <div className="user-session">
             <p><span className="user-label">Login Time:</span> {new Date(userDetails.sessionInfo.loginTime).toLocaleString()}</p>
-            <p><span className="user-label">Session ID:</span> {userDetails.sessionInfo.sessionToken}</p>
           </div>
         )}
       </div>

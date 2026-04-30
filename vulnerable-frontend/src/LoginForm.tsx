@@ -33,7 +33,7 @@ const LoginForm = () => {
       if (data.success) {
         // Store session token in localStorage
         localStorage.setItem('sessionToken', data.sessionToken);
-        navigate({ to: '/user-details', search: { username } });
+        navigate({ to: '/dashboard', search: { username } });
       } else {
         setError(data.message || 'Login failed');
       }

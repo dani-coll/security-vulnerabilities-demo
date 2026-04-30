@@ -1,26 +1,30 @@
 /* Auth (Login) Form Styles */
 .auth-container {
-  max-width: 400px;
+  min-width: 400px;
   margin: 3rem auto;
   padding: 2.5rem 2rem 2rem 2rem;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
 }
 .auth-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #2d3748;
+  background: linear-gradient(90deg, #00d4ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .auth-error {
-  color: #e53e3e;
-  background: #fff5f5;
-  border: 1px solid #e53e3e;
-  border-radius: 6px;
+  color: #ff4757;
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid #ff4757;
+  border-radius: 8px;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -37,42 +41,552 @@
   flex-direction: column;
   gap: 0.3rem;
 }
+.auth-field label {
+  color: #8b9dc3;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 .auth-input {
   padding: 0.7rem 1rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   font-size: 1rem;
-  background: #f9fafb;
-  transition: border 0.2s;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: all 0.2s;
 }
 .auth-input:focus {
-  border: 1.5px solid #6366f1;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
   outline: none;
+}
+.auth-input::placeholder {
+  color: #8b9dc3;
 }
 .auth-button {
   margin-top: 0.5rem;
   padding: 0.8rem 0;
-  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #00ff88 0%, #00d4ff 100%);
+  color: #1a1a2e;
   font-size: 1.1rem;
   font-weight: 600;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.2);
 }
 .auth-button:disabled {
-  background: #cbd5e1;
+  background: rgba(139, 157, 195, 0.3);
+  color: #8b9dc3;
   cursor: not-allowed;
+  box-shadow: none;
 }
 .auth-button:hover:not(:disabled) {
-  background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 255, 136, 0.3);
 }
 
 /* User Details Styles */
 .user-container {
-  max-width: 420px;
+  width: 600px;
+  margin: 3rem auto;
+  padding: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  overflow: hidden;
+}
+
+.user-header {
+  padding: 2rem 2rem 1.5rem;
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  background: linear-gradient(90deg, #00d4ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.user-error {
+  color: #ff4757;
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid #ff4757;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem;
+  text-align: center;
+}
+.user-loading {
+  color: #00d4ff;
+  font-size: 1.1rem;
+  padding: 2rem;
+  text-align: center;
+}
+.user-info {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  margin: 0;
+}
+.user-info p {
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-all;
+}
+.user-label {
+  font-weight: 600;
+  color: #00d4ff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+.user-session {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.user-button {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, #00ff88 0%, #00d4ff 100%);
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.2);
+  margin: 2rem;
+  align-self: center;
+}
+.user-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 255, 136, 0.3);
+}
+
+/* Dashboard Styles - Crypto Wallet */
+.dashboard-container.crypto-wallet {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  overflow: hidden;
+}
+
+.wallet-header {
+  width: 100%;
+  padding: 1rem 1rem 1rem;
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wallet-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.wallet-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  margin-left: 20px;
+  background: linear-gradient(90deg, #00d4ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wallet-user {
+  color: #8b9dc3;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.icon-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.wallet-balance-card {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #00d4ff15 0%, #00ff8815 100%);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+x
+.balance-label {
+  color: #8b9dc3;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(90deg, #00d4ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.balance-change {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.balance-change.positive {
+  color: #00ff88;
+}
+
+.balance-change.negative {
+  color: #ff4757;
+}
+
+.crypto-list {
+  padding: 1.5rem 2rem;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.section-title {
+  color: #8b9dc3;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1rem 0;
+}
+
+.crypto-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.crypto-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.crypto-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.crypto-icon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a1a2e;
+}
+
+.crypto-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.crypto-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.crypto-balance {
+  font-size: 0.85rem;
+  color: #8b9dc3;
+}
+
+.crypto-stats {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+}
+
+.crypto-price {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.crypto-change {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.crypto-change.positive {
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.crypto-change.negative {
+  color: #ff4757;
+  background: rgba(255, 71, 87, 0.1);
+}
+
+.crypto-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.trade-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buy-btn {
+  background: linear-gradient(90deg, #00ff88 0%, #00d4ff 100%);
+  color: #1a1a2e;
+}
+
+.buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+}
+
+.sell-btn {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ff4757;
+  border: 1px solid #ff4757;
+}
+
+.sell-btn:hover {
+  background: rgba(255, 71, 87, 0.3);
+  transform: translateY(-2px);
+}
+
+.wallet-footer {
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: #00d4ff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #00ff88;
+}
+
+/* Trade Modal */
+.trade-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.trade-modal {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.trade-info {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.trade-info p {
+  margin: 0.5rem 0;
+  color: #8b9dc3;
+  font-size: 0.95rem;
+}
+
+.trade-info strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.trade-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.trade-input-group label {
+  display: block;
+  color: #8b9dc3;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.trade-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.trade-input:focus {
+  outline: none;
+  border-color: #00d4ff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.trade-total {
+  margin-top: 0.5rem;
+  color: #00ff88;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.execute-trade-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.execute-trade-btn.buy {
+  background: linear-gradient(90deg, #00ff88 0%, #00d4ff 100%);
+  color: #1a1a2e;
+}
+
+.execute-trade-btn.buy:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+}
+
+.execute-trade-btn.sell {
+  background: linear-gradient(90deg, #ff4757 0%, #ff6b81 100%);
+  color: #fff;
+}
+
+.execute-trade-btn.sell:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+}
+
+.execute-trade-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Old Dashboard Styles - kept for compatibility */
+.dashboard-container {
+  width: 600px;
   margin: 3rem auto;
   padding: 2.5rem 2rem 2rem 2rem;
   background: #fff;
@@ -81,59 +595,82 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: calc(100vh - 100px);
 }
-.user-title {
+.dashboard-title {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #2d3748;
 }
-.user-error {
-  color: #e53e3e;
-  background: #fff5f5;
-  border: 1px solid #e53e3e;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+.dashboard-content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.dashboard-message {
+  font-size: 1rem;
+  color: #4a5568;
   text-align: center;
+  line-height: 1.6;
 }
-.user-loading {
-  color: #4f46e5;
-  font-size: 1.1rem;
-  margin-top: 1rem;
-}
-.user-info {
-  width: 100%;
-  background: #f9fafb;
+.dashboard-info {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
   border-radius: 8px;
   padding: 1.2rem 1rem;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+  color: #166534;
 }
-.user-label {
-  font-weight: 600;
-  color: #6366f1;
+.dashboard-info p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
 }
-.user-session {
-  margin-top: 0.7rem;
+.dashboard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
 }
-.user-button {
-  padding: 0.7rem 0;
-  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
-  color: #fff;
-  font-size: 1.1rem;
+.dashboard-button {
+  padding: 0.8rem 0;
+  font-size: 1.05rem;
   font-weight: 600;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
-  margin-top: 1rem;
+  transition: all 0.2s;
 }
-.user-button:hover {
+.dashboard-button.primary {
+  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
+}
+.dashboard-button.primary:hover {
   background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
 }
+.dashboard-button.secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+.dashboard-button.secondary:hover {
+  background: #e2e8f0;
+}
+.dashboard-debug {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: #fef3c7;
+  border: 1px solid #fbbf24;
+  border-radius: 6px;
+  text-align: center;
+}
+.dashboard-debug small {
+  color: #92400e;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
