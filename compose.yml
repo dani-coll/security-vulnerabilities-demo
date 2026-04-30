@@ -1,0 +1,17 @@
+services:
+  vulnerable-server:
+    build:
+      context: .
+      dockerfile: vulnerable-server/Dockerfile
+    ports:
+      - "3003:3003"
+
+  phishing-site:
+    build: ./phishing-site
+    ports:
+      - "4000:4000"
+
+  data-collector-server:
+    build: ./data-collector-server
+    ports:
+      - "5001:5001"

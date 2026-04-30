@@ -19,51 +19,39 @@ This project demonstrates a Cross-Origin Resource Sharing (CORS) vulnerability e
 
 ## How to Run Everything
 
-### 1. Start the Vulnerable Server
+Start all three servers with a single command:
 
 ```
-cd vulnerable-server
-npm install
-node server.js
+podman compose up --build
 ```
 
-The server will start on port 3000 (or as specified in `server.js`).
+| Service | URL |
+|---|---|
+| Vulnerable app | http://localhost:3003 |
+| Phishing site | http://localhost:4000 |
+| Data collector | http://localhost:5001 |
 
-### 2. Start the Vulnerable Frontend
+## Exposing the Vulnerable Server via ngrok (for live demos)
 
-```
-cd ./vulnerable-frontend
-npm install
-npm run dev
-```
-
-The frontend will start on a port like 5173 (see the terminal output). Open your browser to the URL shown (e.g., `http://localhost:5173`).
-
-### 3. Start the Data Collector Server (optional, for full exploit demo)
+The phishing site targets the vulnerable server by URL. For a local demo this is `http://localhost:3003`, but when presenting to an audience you can expose it publicly using ngrok:
 
 ```
-cd ./data-collector-server
-npm install
-node server.js
+ngrok http 3003
 ```
 
-This server will listen for incoming data sent by the phishing site.
+This generates a public HTTPS URL (e.g. `https://unimportantly-scraggy-otelia.ngrok-free.dev`). Update the fetch URL in `phishing-site/public/index.html` to match the ngrok URL ngrok assigns you:
 
-### 4. Start the Phishing Site (malicious site)
-
-```
-cd ./phishing-site
-npm install
-node server.js
+```js
+const response = await fetch('https://unimportantly-scraggy-otelia.ngrok-free.dev/api/userDetails', {
 ```
 
-The phishing site will start on its own port (e.g., 4000). Open your browser to the phishing site URL (e.g., `http://localhost:4000`).
+> **Note:** ngrok requires a free account and auth token. Run `ngrok config add-authtoken <your-token>` once before use.
 
-### 5. Demonstrate the Exploit
+### Demonstrate the Exploit
 
-- Visit the phishing site in your browser.
-- The phishing site will make cross-origin requests to the vulnerable server and read sensitive data (e.g., user details, tokens).
-- The phishing site may send this data to the data collector server.
+- Log in at the vulnerable app (http://localhost:3003).
+- Open the phishing site (http://localhost:4000) in the same browser — it silently steals your session data on page load.
+- View the stolen data at http://localhost:5001/stolen-data.
 
 ## How to Fix
 
