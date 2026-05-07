@@ -46,7 +46,12 @@ const LoginForm = () => {
 
   return (
     <div className="auth-container">
-      <h2 className="auth-title">Login</h2>
+      <div className="auth-brand">
+        <div className="auth-brand-logo">₿</div>
+        <div className="auth-brand-name">CryptoTrader<span>Pro</span></div>
+        <p className="auth-brand-tagline">Trade smarter. Earn faster.</p>
+      </div>
+      <h2 className="auth-title">Sign in to your account</h2>
       {error && (
         <div className="auth-error">
           {error}
