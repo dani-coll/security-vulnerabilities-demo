@@ -1,7 +1,7 @@
 FROM node:20-alpine AS frontend-builder
 WORKDIR /app
 COPY vulnerable-frontend/package*.json ./
-RUN npm install
+RUN npm install --include=dev
 COPY vulnerable-frontend/ .
 RUN npm run build
 
