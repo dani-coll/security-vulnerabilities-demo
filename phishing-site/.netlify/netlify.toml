@@ -1,0 +1,26 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/daniel.coll/dev/cors-vulnerability-demo-ts/phishing-site/public"
+publishOrigin = "config"
+base = "/Users/daniel.coll/dev/cors-vulnerability-demo-ts/phishing-site"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
