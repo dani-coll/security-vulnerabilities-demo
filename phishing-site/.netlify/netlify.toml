@@ -7,9 +7,9 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "/Users/daniel.coll/dev/cors-vulnerability-demo-ts/phishing-site/public"
+publish = "/Users/daniel.coll/dev/techevangelist/cors-vulnerability-demo-ts/phishing-site/public"
 publishOrigin = "config"
-base = "/Users/daniel.coll/dev/cors-vulnerability-demo-ts/phishing-site"
+base = "/Users/daniel.coll/dev/techevangelist/cors-vulnerability-demo-ts/phishing-site"
 
 [build.environment]
 

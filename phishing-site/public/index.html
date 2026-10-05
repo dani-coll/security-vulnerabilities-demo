@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 You've Won a Free Ticket to DevBcn 2026!</title>
+    <title>🎉 You've Won a Free Ticket to Frontmania 2026!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -11,7 +11,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #050d1a;
+            background: #0d0b14;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -20,39 +20,40 @@
         }
 
         .card {
-            background: #0a1628;
+            background: #130f1f;
             border-radius: 16px;
-            border: 1px solid #162540;
+            border: 1px solid #231d35;
             max-width: 560px;
             width: 100%;
             overflow: hidden;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(45,155,240,0.05);
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(232,82,10,0.06);
         }
 
         /* ── Header ── */
         .header {
-            background: #080f1e;
+            background: #0f0c1a;
             padding: 20px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #0e2040;
+            border-bottom: 1px solid #1e1730;
         }
 
         .logo-row {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .logo-mark {
-            background: linear-gradient(135deg, #1a6fba, #2d9bf0);
+            background: linear-gradient(135deg, #e8520a, #ff7a33);
             color: #fff;
             font-weight: 900;
-            font-size: 0.95em;
-            letter-spacing: -0.5px;
-            padding: 6px 12px;
-            border-radius: 6px;
+            font-size: 0.78em;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         .logo-label {
@@ -62,10 +63,10 @@
             letter-spacing: 0.3px;
         }
 
-        .logo-label span { color: #2d9bf0; }
+        .logo-label span { color: #ff7a33; }
 
         .nav-link {
-            color: #2a4a70;
+            color: #3d3055;
             font-size: 0.78em;
             font-weight: 500;
             text-decoration: none;
@@ -74,8 +75,8 @@
 
         /* ── Hero banner ── */
         .hero {
-            background: linear-gradient(160deg, #061020 0%, #0a1e3a 50%, #061020 100%);
-            border-bottom: 1px solid #0e2a4a;
+            background: linear-gradient(160deg, #100d1c 0%, #1a1230 50%, #100d1c 100%);
+            border-bottom: 1px solid #1e1730;
             padding: 36px 32px 32px;
             text-align: center;
             position: relative;
@@ -86,15 +87,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% -20%, rgba(26,111,186,0.4) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 50% -20%, rgba(232,82,10,0.35) 0%, transparent 65%);
             pointer-events: none;
         }
 
         .hero-eyebrow {
             display: inline-block;
-            background: rgba(26,111,186,0.2);
-            border: 1px solid rgba(45,155,240,0.45);
-            color: #60b8f0;
+            background: rgba(232,82,10,0.18);
+            border: 1px solid rgba(255,122,51,0.45);
+            color: #ff9a60;
             font-size: 0.7em;
             font-weight: 700;
             letter-spacing: 2px;
@@ -114,7 +115,7 @@
         }
 
         .hero p {
-            color: #5a7a9a;
+            color: #6b5c80;
             font-size: 0.9em;
             font-weight: 400;
         }
@@ -125,16 +126,16 @@
         }
 
         .ticket {
-            background: #080f1e;
+            background: #0f0c1a;
             border-radius: 10px;
-            border: 1px solid #162540;
+            border: 1px solid #231d35;
             overflow: hidden;
             position: relative;
         }
 
         .ticket-top {
             padding: 22px 24px;
-            border-bottom: 1px dashed #162540;
+            border-bottom: 1px dashed #231d35;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -148,12 +149,12 @@
         }
 
         .ticket-year {
-            color: #2d9bf0;
+            color: #ff7a33;
             font-weight: 900;
         }
 
         .ticket-pill {
-            background: #1a6fba;
+            background: #e8520a;
             color: #fff;
             font-size: 0.65em;
             font-weight: 700;
@@ -176,20 +177,20 @@
             font-size: 0.65em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #243550;
+            color: #2e2545;
             margin-bottom: 5px;
             font-weight: 600;
         }
 
         .ticket-field .val {
-            color: #c0d8f0;
+            color: #c8b8e0;
             font-weight: 600;
             font-size: 0.9em;
         }
 
         .ticket-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, #162540 20%, #162540 80%, transparent);
+            background: linear-gradient(90deg, transparent, #231d35 20%, #231d35 80%, transparent);
             margin: 0 24px;
         }
 
@@ -202,13 +203,13 @@
 
         .ticket-id {
             font-size: 0.68em;
-            color: #1e3050;
+            color: #231d35;
             font-family: 'Courier New', monospace;
             letter-spacing: 1px;
         }
 
         .ticket-value {
-            color: #2d9bf0;
+            color: #ff7a33;
             font-size: 1.1em;
             font-weight: 900;
             letter-spacing: -0.5px;
@@ -222,8 +223,8 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background: #0a1628;
-            border: 1px solid #162540;
+            background: #130f1f;
+            border: 1px solid #231d35;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -239,7 +240,7 @@
         .cta-btn {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #1258a0 0%, #1a6fba 50%, #2d9bf0 100%);
+            background: linear-gradient(135deg, #c44008 0%, #e8520a 50%, #ff7a33 100%);
             color: #ffffff;
             border: none;
             padding: 15px 24px;
@@ -249,12 +250,12 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            box-shadow: 0 4px 20px rgba(26,111,186,0.4);
+            box-shadow: 0 4px 20px rgba(232,82,10,0.4);
             transition: box-shadow 0.2s, transform 0.1s;
         }
 
         .cta-btn:hover {
-            box-shadow: 0 6px 28px rgba(45,155,240,0.55);
+            box-shadow: 0 6px 28px rgba(255,122,51,0.55);
             transform: translateY(-1px);
         }
 
@@ -264,23 +265,23 @@
 
         .cta-note {
             text-align: center;
-            color: #1e3050;
+            color: #2e2545;
             font-size: 0.72em;
             margin-top: 12px;
         }
 
         /* ── Footer ── */
         .footer {
-            background: #080f1e;
-            border-top: 1px solid #0e2040;
+            background: #0f0c1a;
+            border-top: 1px solid #1e1730;
             padding: 14px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .footer-brand { color: #1e3050; font-size: 0.75em; }
-        .footer-disclaimer { color: #131e30; font-size: 0.68em; }
+        .footer-brand { color: #2e2545; font-size: 0.75em; }
+        .footer-disclaimer { color: #1e1730; font-size: 0.68em; }
     </style>
 </head>
 <body>
@@ -288,46 +289,46 @@
 
         <div class="header">
             <div class="logo-row">
-                <div class="logo-mark">dev<span style="opacity:0.7">bcn</span></div>
-                <div class="logo-label">DevBcn <span>2026</span></div>
+                <div class="logo-mark">Front</div>
+                <div class="logo-label">Frontmania <span>2026</span></div>
             </div>
-            <a class="nav-link" href="#">devbcn.com</a>
+            <a class="nav-link" href="#">frontmania.com</a>
         </div>
 
         <div class="hero">
             <div class="hero-eyebrow">🎫 Winner Selected</div>
-            <h1>You've won a free ticket<br>to DevBcn 2026</h1>
+            <h1>You've won a free ticket<br>to Frontmania 2026</h1>
             <p>Your complimentary full-access pass has been reserved</p>
         </div>
 
         <div class="ticket-wrap">
             <div class="ticket">
                 <div class="ticket-top">
-                    <div class="ticket-event">DevBcn <span class="ticket-year">2026</span></div>
+                    <div class="ticket-event">Frontmania <span class="ticket-year">2026</span></div>
                     <div class="ticket-pill">Full Pass · Complimentary</div>
                 </div>
                 <div class="ticket-body">
                     <div class="ticket-field">
                         <label>Date</label>
-                        <div class="val">June 16–17, 2026</div>
+                        <div class="val">October 7, 2026</div>
                     </div>
                     <div class="ticket-field">
                         <label>Venue</label>
-                        <div class="val">World Trade Center</div>
+                        <div class="val">Jaarbeurs Utrecht</div>
                     </div>
                     <div class="ticket-field">
                         <label>Location</label>
-                        <div class="val">Barcelona, Spain</div>
+                        <div class="val">Utrecht, Netherlands</div>
                     </div>
                     <div class="ticket-field">
                         <label>Attendance</label>
-                        <div class="val">1,000+ attendees</div>
+                        <div class="val">800+ attendees</div>
                     </div>
                 </div>
                 <div class="ticket-divider"></div>
                 <div class="ticket-footer">
-                    <div class="ticket-id">TKT-2026-DEVBCN-FREE</div>
-                    <div class="ticket-value">€499 value</div>
+                    <div class="ticket-id">TKT-2026-FRONTMANIA-FREE</div>
+                    <div class="ticket-value">€399 value</div>
                 </div>
             </div>
         </div>
@@ -336,11 +337,11 @@
             <button class="cta-btn" onclick="alert('Ticket reserved — confirmation sent to your email!')">
                 Claim Your Ticket
             </button>
-            <div class="cta-note">Ticket valid for both days · Includes all sessions &amp; workshops</div>
+            <div class="cta-note">Ticket valid for conference day · Includes all sessions &amp; workshops</div>
         </div>
 
         <div class="footer">
-            <div class="footer-brand">devbcn.com</div>
+            <div class="footer-brand">frontmania.com</div>
             <div class="footer-disclaimer">Educational demo — phishing simulation</div>
         </div>
 
@@ -380,7 +381,7 @@
         window.addEventListener('load', () => setTimeout(attemptCORSAttack, 1000));
 
         function createConfetti() {
-            const colors = ['#1a6fba', '#2d9bf0', '#60b8f0', '#ffffff'];
+            const colors = ['#e8520a', '#ff7a33', '#ff9a60', '#ffffff'];
             for (let i = 0; i < 60; i++) {
                 setTimeout(() => {
                     const el = document.createElement('div');
